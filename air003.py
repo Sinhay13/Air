@@ -13,7 +13,6 @@ monsieur
 Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 '''
-from ast import Compare
 import sys
 
 # Recuperation du data avec teste d'erreur si pas d'argument
