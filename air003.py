@@ -13,6 +13,7 @@ monsieur
 Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 '''
+from ast import Compare
 import sys
 
 # Recuperation du data avec teste d'erreur si pas d'argument
@@ -36,24 +37,18 @@ def tri_a_bule(l):
     return l
 
 
-# on compare une valeur apres l'autre:
-    def compare (lt):
-        ld=[]
-        N=len(lt)
-        n=0
-        i=0
-        I=len(lt)
-        while n<N:
-            if lt[n]==lt[n+1]:
-                ld.append(lt[n])
-                n+=1
-            else:
-                n+=1
-        return ld
 
-# on affiche les valeurs en double:
-def resultat (ld):
-    for i in ld:
-        print(i)
+# on affiche la derniere valeur qui la valeur qui n'a pas de per apres verif:
+def resultat (l):
+    if l[-2]!=l[-1]:
+        print(l[-1])
+    else:
+        print("error")
 
 
+
+
+# appel des fonction:
+l=input_data()
+lt=tri_a_bule(l)
+resultat(lt)
