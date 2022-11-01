@@ -28,9 +28,9 @@ def input_data():
     return l
 
 #On fais une boucle for pour afficher le resultat: 
-def afficher_liste(list):
-    for i in list:
-        print(i)
+def afficher_liste(list," "):
+  
+    
 
 
 #appel des fonctions:
