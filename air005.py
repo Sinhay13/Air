@@ -19,7 +19,6 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 
 import sys
-from this import d
 
 # Recuperation du data avec teste d'erreur si pas d'argument
 def input_data():
@@ -30,7 +29,7 @@ def input_data():
     else:
         return l
 
-# on recupere le data quon a besion dans les variable qu'on a besion:
+# on recupere le data quon a besion dans les variables qu'on a besion:
 def prepa (data):
     coef_ope=data[-1]
     coef=coef_ope[0]
@@ -38,15 +37,46 @@ def prepa (data):
     del data[-1]
     return data, coef, ope
 
-# on teste les error argument pour que ce sois  bien des int et on les transforme en int
+# on teste les errors argument pour que ce sois  bien des int et on les transforme en int
 def test_argument(data,coef):
-    pass
+    try:
+        coef_int=int(coef)
+        data_int=[]
+        for i in data:
+            data_int.append(int(i))
+        return data_int, coef_int
+    except:
+        print("erreur")
+        sys.exit()
+
+            
 # on verifi l'operateur + on fais les calculs + on les stock dans une nouvelle liste
 def calculs (data, coef, ope):
-    pass
+    data_final=[]
+    i=0
+    n=len(data)
+    while i<n:
+        if ope=="+":
+            data_final.append(str(data[i]+coef))
+            i+=1
+        elif ope=="-":
+            data_final.append(str(data[i]-coef))
+            i+=1
+        else:
+            print("erreur")
+            sys.exit()
+    return data_final
+    
+
+   
+
 # On imprime le resultat
 def resultat(data):
-    pass
+    result=" ".join(data)
+    print(result)
+    
+
+    
 
 
 
@@ -54,5 +84,5 @@ def resultat(data):
 data=input_data ()
 data, ope, coef =prepa(data)
 data, coef=test_argument(data, coef)
-#datafinal=calculs(data, coef, ope)
-#resultat(datafinal)
+data_final=calculs(data, coef, ope)
+resultat(data_final)
