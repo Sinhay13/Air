@@ -36,3 +36,5 @@ def afficher_liste(list):
 #appel des fonctions:
 l=input_data()
 afficher_liste(l)
+
+# integret le separateur !!!!
