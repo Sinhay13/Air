@@ -28,13 +28,16 @@ def input_data():
     return l
 
 #On fais une boucle for pour afficher le resultat: 
-def afficher_liste(list," "):
+def afficher_liste(list,a):
+  for i in list:
+    print(f"{i}{a}")
+
+
   
     
 
 
 #appel des fonctions:
 l=input_data()
-afficher_liste(l)
+afficher_liste(l," ")
 
-# integret le separateur !!!!
