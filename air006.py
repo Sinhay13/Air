@@ -39,33 +39,41 @@ def orguanisateur(l):
 
 # On compare caraterére par carectére : 
 def comparateur (word, string):
-	for i in range(len(word)):
-		if word[i].lower()== string:
-			return False
+	r=True
+	n=0
+	N=len(word)
+	while n<N:
+		if word[n].lower()==string.lower():
+			r= False
+			return r
 		else:
-			return True 
+			n+=1
+	return r
 	
 
 
 # on recherche les mots a suprimer et on les suprimes:
-def inspecteur(string,l):
+def inspecteur(l,string):
 	lf=[]
 	for word in l:
 		if comparateur(word, string)== True:
 			lf.append(word)
-	print(lf)
+	return lf
 	
+# Affichage des resultats:
+def final (lf):
+	reponse= ", ".join(lf)
+	print(reponse)
+
+
+
+
 
 	
-				
-
-
-
+			
 # Appel des fonctions:
-
 list= input_data()
 list, string=orguanisateur(list)
-print(list)
-print(string)
-inspecteur(list,string)
+list_final= inspecteur(list,string)
+final(list_final)
 
