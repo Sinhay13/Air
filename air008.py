@@ -42,7 +42,7 @@ def organisateur(l):
         elif l[n]!="fusion" and n<z:
             t1.append(l[n])
             n+=1
-        elif l[n]!="fusion" and n>z:
+        else:
             t2.append(l[n])
             n+=1
     return t1, t2
