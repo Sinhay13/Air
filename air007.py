@@ -55,7 +55,7 @@ def tri_a_bule(l):
     return l
 
 
-# Affichage des resultats:
+# Affichage des resultats et remétentan les parametre en str à l'aide d'une boucle for:
 def final (l):
 	inStr=[]
 	for i in l:
