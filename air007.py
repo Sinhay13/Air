@@ -64,7 +64,6 @@ def final (l):
 	print(reponse)
 
 # Appelle des fonctions:
-
 list1=input_data()
 list2=Int(list1)
 list3=tri_a_bule(list2)
