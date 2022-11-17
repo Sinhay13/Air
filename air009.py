@@ -27,7 +27,7 @@ def input_data():
     else:
         return l
 
-#On modifi le tableau en saugardant ine valeur temporaire qu'ond reasigne:
+#On decale de 1 ver la gauche :
 def left(l):
 	l2=[]
 	n=0
