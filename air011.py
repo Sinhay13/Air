@@ -20,31 +20,32 @@ import sys
 # Recuperation du data avec teste d'erreur si pas d'argument
 def input_data():
     l = sys.argv[1:]
-    if len(l) !=1:
+    if len(l) !=2:
         print("erreur")
         sys.exit()
     else:
         try:
-            n=" ".join(l)
+            n=l[1]
+            m=l[0]
             n_int=int(n)
-            return n_int
+            return m, n_int
         except:
             print("erreur")
             sys.exit()
 
 # On fais la pyramide : 
-def pyramide(n):
-    m="O"
+def pyramide(m,n):
+    m2=m+m
     print(" "*(n+1)+m)
     for x in range(n):
-        m+="OO"
+        m+=m2
         print(' '*(n-x)+m)
 
 
 
 # Appel des fonctions: 
-n=input_data()
-pyramide(n)
+m,n=input_data()
+pyramide(m,n)
 
 
 
