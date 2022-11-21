@@ -44,33 +44,42 @@ def test_erreur (l):
         print("erreur")
         sys.exit()
 
-#Partition:
-def partition(l):
-    pivot=l[-1]
-    ptr=0
-    for i in range(p,r):
-        if l[i]<=pivot:
-            l[i],l[ptr]=l[ptr],l[i]
-            ptr+=1
-    l[ptr], l[r]= l[r],l[ptr]
-    return l[ptr]
+#init des parametres:
+def para(l):
+    low=0
+    high=len(l)-1
+    return l, low, high
 
+
+
+#Partition:
+def partition(l, low, high):
+    pivot= l[high]
+    i = low - 1
+    for j in range(low, high):
+        if l[j]<= pivot:
+            i+=1
+            (l[i],l[j])=(l[j],l[i])
+    (l[i+1],l[high])=(l[high],l[i+1])
+    return i+1
     
 
-
-
-
-
 # QuickSort:
-def quicksort(p=0,r=-1,l=[1]):
-    if len(l)==1:
-        return l
-    if p<r:
-        pi=partition(p,r,l)
-        quicksort(p,pi-1,l)
-        quicksort(pi+1,r,l)
+def quicksort(l,low,high):
+    if low<high:
+        pi= partition(l,low, high)
+        quicksort(l,low,pi-1)
+        quicksort(l,pi+1,high)
     return l
 
+# Affichage de la nouvelle liste
+def result(l):
+    l_final=[]
+    for i in l:
+        l_final.append(str(i))
+    r=" ".join(l_final)
+    print(r)
+    
         
 
 
@@ -78,5 +87,6 @@ def quicksort(p=0,r=-1,l=[1]):
 # appell des fonctions:
 l=input_data()
 l=test_erreur(l)
-l=quicksort(l)
-print(l)
+l,low, high=para(l)
+l=quicksort(l, low, high)
+result(l)
