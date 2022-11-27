@@ -23,6 +23,7 @@ le retour du r c'est pour le resultat global
 '''
 
 # Mis en place des couleurs:
+import subprocess   
 class bcolors:
     OK = '\033[92m' #GREEN
     FAIL = '\033[91m' #RED
@@ -48,7 +49,13 @@ def air000():
     # Test de presence:
     r+=toBe(name)
     # test d'erreur:
-    # test reel:
+    zipname= $(f"python3 {name}")
+    if x=="erreur":
+        print(bcolors.OK + f"air0{name[4]}{name[5]} (2/3) : success"+ bcolors.RESET)
+        r+=1
+    else:
+        print(bcolors.OK + f"air0{name[4]}{name[5]} (2/3) : success"+ bcolors.RESET)
+    # test reel
     return r
 
 # Air001:
