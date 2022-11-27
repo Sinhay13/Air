@@ -49,8 +49,8 @@ def air000():
     # Test de presence:
     r+=toBe(name)
     # test d'erreur:
-    zipname= $(f"python3 {name}")
-    if x=="erreur":
+    x= subprocess.getstatusoutput(f"python3 {name}")
+    if x=="errur":
         print(bcolors.OK + f"air0{name[4]}{name[5]} (2/3) : success"+ bcolors.RESET)
         r+=1
     else:
