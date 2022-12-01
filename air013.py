@@ -22,8 +22,27 @@ faire trois tests le premier si il existe le deuxieme est une erreur et le trois
 le retour du r c'est pour le resultat global 
 '''
 
-# Mis en place des couleurs:
-import subprocess   
+# Import fonctions:
+
+
+import subprocess 
+'''
+import air000 as a0
+import air001 as a1
+import air002 as a2
+import air003 as a3
+import air004 as a4
+import air005 as a5
+import air006 as a6
+import air007 as a7
+import air008 as a8
+import air009 as a9
+import air010 as a10
+import air011 as a11
+import air012 as a12
+'''
+
+# Import du code couleur:
 class bcolors:
     OK = '\033[92m' #GREEN
     FAIL = '\033[91m' #RED
@@ -42,6 +61,12 @@ def toBe(x):
         print(bcolors.FAIL + f"air0{x[4]}{x[5]} (1/3) : fail"+ bcolors.RESET)
         return r
 
+def test(a):
+    return a
+
+
+
+
 # Air000:
 def air000():
     r=0
@@ -49,17 +74,13 @@ def air000():
     # Test de presence:
     r+=toBe(name)
     # test d'erreur:
-    x= subprocess.getstatusoutput(f"python3 {name}")
-    if x=="errur":
-        print(bcolors.OK + f"air0{name[4]}{name[5]} (2/3) : success"+ bcolors.RESET)
-        r+=1
-    else:
-        print(bcolors.OK + f"air0{name[4]}{name[5]} (2/3) : success"+ bcolors.RESET)
+    x=exec(open("air000.py").read())
+    print(x)
     # test reel
     return r
 
 # Air001:
-def air001():
+def air001():   
     r=0
     name="air001.py"
     # Test de presence:
