@@ -146,7 +146,7 @@ def air004():
     test1="yo"
     r+=erreurs(name,test1)
     # test reel:
-    test2=" 'Hello milady,   bien ou quoi ??' "
+    test2=" Hello milady,   bien ou quoi ?? "
     r+=correct(name,test2)
     return r
 
