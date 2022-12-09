@@ -47,6 +47,14 @@ def organisateur(l):
             n+=1
     return t1, t2
 
+# On verifi si il y a presence du mot clé fusion en reguardant si la deuxieme liste est vide:
+def List_vide(t2):
+    if t2==[]:
+        print("erreur")
+        sys.exit()
+    return t2
+
+
 
 # teste de data pour savoir si c'est int et mettre en int
 def Int(l):
@@ -89,9 +97,12 @@ def final (l):
 #Appels des fonction :
 l=input_data()
 tab1,tab2=organisateur(l)
+tab2=List_vide(tab2)
 tab1_int=Int(tab1)
 tab2_int=Int(tab2)
 tab3=sorted_fusion(tab1_int,tab2_int)
 final(tab3)
 
 
+
+        
