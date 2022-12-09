@@ -23,16 +23,24 @@ def input_data():
       sys.exit()
     return l
 
+# On passe à int : 
+def str_to_int(l):
+    l_int=[]
+    for i in l:
+        l_int.append(int(i))
+    return l_int
 
-# on fais un tri a bule pour oguaniser la liste: 
-def tri_a_bule(l):
-    n = len(l)
-    # Traverser tous les éléments du tableau
-    for i in range(n):
-        for j in range(0, n-i-1):
-            # échanger si l'élément trouvé est plus grand que le suivant
-            if l[j] > l[j+1] :
-                l[j], l[j+1] = l[j+1], l[j]
+
+# on fais un tri par insertion: 
+def tri_insertion(l):
+    N = len(l)
+    for n in range(1,N):
+        cle = l[n]
+        j = n-1
+        while j>=0 and l[j] > cle:
+            l[j+1] = l[j] # decalage
+            j = j-1
+        l[j+1] = cle
     return l
 
 
@@ -49,5 +57,6 @@ def resultat (l):
 
 # appel des fonction:
 l=input_data()
-lt=tri_a_bule(l)
+l_int=str_to_int(l)
+lt=tri_insertion(l_int)
 resultat(lt)
